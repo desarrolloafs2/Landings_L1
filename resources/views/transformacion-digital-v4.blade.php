@@ -62,21 +62,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
 
-
-
-
-
-
-
-
-
         <section class="mb-5 text-center">
         <div class="container">
             <div class="col-lg-8 mx-auto">
             <h1 class="my-5 mb-5">
                 <b>Gana experiencia real y<br>amplía tus oportunidades</b>
             </h1>
-            <p class="py-2 mb-4">80 horas de Formación en Centros de Trabajo (FCT)</p>
+            <p class="mb-4" 
+            style="background: linear-gradient(to right, #ff4f1aff, #f5984cff); 
+                    color: white; 
+                    border-radius: 8px; 
+                    padding: 1rem 1rem;
+                    max-width: 60%;
+                    margin: 0 auto;">
+                80 horas de Formación en Centros de Trabajo (FCT)
+            </p>
+
             <p class="py-2 mb-4">
                 Este módulo práctico es obligatorio para obtener tu certificado de<br>
                 profesionalidad y se realiza al finalizar el curso
@@ -92,48 +93,58 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
         <section class="mb-5 bg-section text-center" 
-        style="background-image: url('{{asset('images/Imagenes-L1-2.png')}}'); 
-                background-size: cover; 
-                background-position: center 90%; 
-                background-repeat: no-repeat; 
-                min-height: 80vh; 
-                display: flex; 
-                align-items: center;">
-        
-        <div class="overlay"></div>
+            style="background-image: url('{{asset('images/Imagenes-L1-2.png')}}'); 
+                    background-size: cover; 
+                    background-position: center 90%; 
+                    background-repeat: no-repeat; 
+                    min-height: 80vh; 
+                    display: flex; 
+                    align-items: flex-start;
+                    justify-content: center;
+                    padding-top: 8vh;">
+            
+            <div class="overlay"></div>
 
-        <div class="container position-relative">
-            <div class="col-lg-6 mx-auto">
-            <h1 class="text-white">
-                <b>Becas y ayudas para personas<br>en situación de desempleo</b>
-            </h1>
-            <p class="mt-5 text-white">
-                Queremos que solo te preocupes de aprender, por eso<br>
-                ponemos a tu disposición diferentes ayudas económicas
-            </p>
+            <div class="container position-relative">
+                <div class="mx-auto" style="max-width: 90%;"> 
+                    <h1 class="text-white" 
+                        style="font-size: 3.5rem; line-height: 1.1; font-weight: 900; margin-bottom: 3rem;">
+                        <b>Becas y ayudas para personas<br>en situación de desempleo</b>
+                    </h1>
+                    <p class="mt-5 text-white" style="font-size: 1.3rem;">
+                        Queremos que solo te preocupes de aprender, por eso<br>
+                        ponemos a tu disposición diferentes ayudas económicas
+                    </p>
 
-            <div class="row mb-3 mt-5">
-                <div class="col-6">
-                <p>Ayudas de<br><b>Transporte</b></p>
-                </div>
-                <div class="col-6">
-                <p>Ayudas a la<br><b>Conciliación</b></p>
+                    <div class="row mb-3 mt-5">
+                        <div class="col-6">
+                            <div style="font-size: 1.2rem; background: white; border-radius: 8px; padding: 1rem; text-align: center;">
+                                <p>Ayudas de<br><b>Transporte</b></p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div style="font-size: 1.2rem; background: white; border-radius: 8px; padding: 1rem; text-align: center;">
+                                <p>Ayudas a la<br><b>Conciliación</b></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div style="font-size: 1.2rem; background: white; border-radius: 8px; padding: 1rem; text-align: center;">
+                                <p>Becas a personas<br><b>discapacitadas</b></p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div style="font-size: 1.2rem; background: white; border-radius: 8px; padding: 1rem; text-align: center;">
+                                <p>Becas a víctimas de<br><b>violencia de género</b></p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-6">
-                <p>Becas a personas<br><b>discapacitadas</b></p>
-                </div>
-                <div class="col-6 bg-white">
-                <p>Becas a víctimas de<br><b>violencia de género</b></p>
-                </div>
-            </div>
-            </div>
-        </div>
         </section>
-
-
 
 
         <section class="py-5">
