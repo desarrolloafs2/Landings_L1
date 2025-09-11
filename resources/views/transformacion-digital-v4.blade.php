@@ -46,7 +46,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                             Mejora tu carrera<br>
                                             profesional<br>
                                             sin dejar tu trabajo<br>
-                                            cambio para tu empresa?
                                         </b>
                                     </h1>
                                     <h5 class="text-white mb-3">Cursos oficiales y gratuitos<br>
