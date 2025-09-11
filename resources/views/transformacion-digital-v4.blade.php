@@ -24,54 +24,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
     <body>
 
-        <section class="position-relative pb-5">
-            <div class="container-fluid mb-5 ">
-                <div class="row">
-                    <div class="col-lg-10 offset-lg-1 col-12 offset-0">
-                        <div class="container-fluid">
-                            <div class="row mt-4">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <section class="position-relative pb-5" style="background-image: url('{{asset('images/Imagenes-L1-1.png')}}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
             <div class="container-fluid mb-5">
                 <div class="row">
-                    <div class="col-xl-10 offset-xl-1 col-12 offset-0">
-                        <div class="container-fluid">
-                            <div class="row mb-xl-0 mb-lg-5 mb-0">
-                                <div class="col-12">
-                                    <h1 class="text-white">
-                                        <b>
-                                            Mejora tu carrera<br>
-                                            profesional<br>
-                                            sin dejar tu trabajo<br>
-                                        </b>
-                                    </h1>
-                                    <h5 class="text-white mb-3">Cursos oficiales y gratuitos<br>
-                                    diseñados para personas ocupadas</h5>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xl-4 col-lg-5 col-12 mb-5">
-                                    <div class="mt-lg-5 mt-4 p-lg-5 p-4">
-                                        <h6 class="text-white mb-3">
-                                            Formación subvencionada por: 
-                                        </h6>
-                                        <img class="header-logo" src="{{asset('images/MEFPD.jpg')}}" alt="Logo AMEFPD">
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
+                <div class="col-xl-10 offset-xl-1 mt-5">
+                    <h1 class="text-white">
+                    <b>
+                        Mejora tu carrera<br>
+                        profesional<br>
+                        sin dejar tu trabajo<br>
+                    </b>
+                    </h1>
+                    <h5 class="text-white mb-3">
+                    Cursos oficiales y gratuitos<br>
+                    diseñados para personas ocupadas
+                    </h5>
+                </div>
+                </div>
+
+                <div class="row">
+                <div class="col-xl-4 col-lg-5 col-12 mb-5">
+                    <div class="mt-lg-5 mt-4 p-lg-5 p-4">
+                    <h6 class="text-white mb-3">
+                        Formación subvencionada por:
+                    </h6>
+                    <img class="header-logo" src="{{asset('images/MEFPD.jpg')}}" alt="Logo AMEFPD">
                     </div>
                 </div>
+                </div>
             </div>
-            <video class="w-100 h-100 background-video" autoplay loop muted playsinline>
-                <source src="{{asset('videos/Comp 1_4.mp4')}}" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
         </section>
+
 
         <section class="mb-5 text-center">
         <div class="container">
@@ -94,19 +77,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
         </section>
 
-        <section class="mb-5 bg-section text-center">
+        <section class="mb-5 bg-section text-center" 
+        style="background-image: url('{{asset('images/Imagenes-L1-2.png')}}'); 
+                background-size: cover; 
+                background-position: center 90%; 
+                background-repeat: no-repeat; 
+                min-height: 80vh; 
+                display: flex; 
+                align-items: center;">
+        
         <div class="overlay"></div>
+
         <div class="container position-relative">
-            <div class="col-lg-6 mx-auto mt-5">
-            <h1>
+            <div class="col-lg-6 mx-auto">
+            <h1 class="text-white">
                 <b>Becas y ayudas para personas<br>en situación de desempleo</b>
             </h1>
-            <p class="mt-5">
+            <p class="mt-5 text-white">
                 Queremos que solo te preocupes de aprender, por eso<br>
                 ponemos a tu disposición diferentes ayudas económicas
             </p>
 
-            <div class="row mb-3  mt-5">
+            <div class="row mb-3 mt-5">
                 <div class="col-6">
                 <p>Ayudas de<br><b>Transporte</b></p>
                 </div>
@@ -119,13 +111,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div class="col-6">
                 <p>Becas a personas<br><b>discapacitadas</b></p>
                 </div>
-                <div class="col-6">
+                <div class="col-6 bg-white">
                 <p>Becas a víctimas de<br><b>violencia de género</b></p>
                 </div>
             </div>
             </div>
         </div>
         </section>
+
+
 
 
         <section class="py-5">
@@ -163,93 +157,100 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         
 
-        <section id="form" class="position-relative">
-            <div class="container-fluid py-5">
-                <div class="row">
-                    <div class="col-xl-10 offset-xl-1 col-12 offset-0">
-                        <div class="container-fluid bg-transparent-black rounded">
-                            <div class="row my-5 py-5">
-                                <div class="col-xl-6 col-lg-5 col-12 mb-5">
-                                    <div class="container-fluid">
-                                        <div class="row">
-                                            <div class="col-lg-10 offset-lg-1 col-12 offset-0">
-                                                <h1 class="text-white mt-5"><b>¿Quieres<br>estudiar y no<br>sabes qué?</b></h1>
-                                                <h4 class="text-white mt-5">Rellena el formulario<br>y te ayudamos</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-7 col-12">
-                                    <div class="container-fluid">
-                                        <div class="row">
-                                            <div class="col-xl-10 offset-xl-1 col-lg-11 col-12 offset-0">
-                                                <form method="post" action="{{url('bootcamp-en-marketing-digital')}}">
-                                                    {{csrf_field()}}
-                                                    @if(request()->has('qr'))
-                                                        <input type="hidden" name="qr" value="{{ request('qr') }}">
-                                                    @endif
-                                                    <div class="fields">
-                                                        <div class="mb-3">
-                                                            <label class="text-white" for="name">Nombre:</label>
-                                                            <input type="text" id="name" name="name" required>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label class="text-white" for="surnames">Apellidos:</label>
-                                                            <input type="text" id="surnames" name="surnames" required>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label class="text-white" for="email">Email:</label>
-                                                            <input type="email" id="email" name="email" required>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label class="text-white" for="phone">Teléfono:</label>
-                                                            <input type="tel" pattern="^\+?[0-9\s\-]{7,15}$" id="phone" name="phone" required>
-                                                        </div>
-                                                        
-                                                        <div class="mb-3">
-                                                            <label class="text-white mb-2" for="current-position">Estudios primarios:</label>
-                                                            <select class="form-control" id="current-position" name="current_position" required>
-                                                                <option value="" hidden>Seleccione una opción</option>
-                                                                <option value="Directivos">Directivos</option>
-                                                                <option value="Mandos intermedios">Mandos intermedios</option>
-                                                                <option value="Responsables">Responsables</option>
-                                                                <option value="Autónomos">Autónomos</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label class="text-white mb-2" for="contact-way">Situación actual:</label>
-                                                            <select class="form-control" id="contact-way" name="contact_way" required>
-                                                                <option value="" hidden>Seleccione una opción</option>
-                                                                <option value="Whatsapp">Whatsapp</option>
-                                                                <option value="Llamada telefónica">Llamada telefónica</option>
-                                                                <option value="Email">Email</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="d-flex justify-content-between align-items-center mt-4">
-                                                        <div class="custom-checkbox">
-                                                            <input type="checkbox" id="acceptConditions" required>
-                                                            <label class="ms-2 text-white" for="acceptConditions">Acepto aviso legal</label>
-                                                        </div>
-                                                        <div>
-                                                            <button type="submit" class="button-rounded blue border-0 bg-white px-4 py-2"><b>Enviar</b></button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+        <section id="form" class="position-relative" 
+        style="background-image: url('{{asset('images/Imagenes-L1-3.png')}}'); 
+                background-size: cover; 
+                background-position: center; 
+                background-repeat: no-repeat; 
+                min-height: 100vh; 
+                display: flex; 
+                align-items: center;">
+        
+        <div class="container-fluid py-5">
+            <div class="row">
+            <div class="col-xl-10 offset-xl-1 col-12 offset-0">
+                <div class="container-fluid">
+                <div class="row my-5 py-5">
+                    <div class="col-xl-6 col-lg-5 col-12 mb-5">
+                    <div class="container-fluid bg-transparent-black rounded">
+                        <div class="row">
+                        <div class="col-lg-10 offset-lg-1 col-12 offset-0">
+                            <h1 class="text-white mt-5"><b>¿Quieres<br>estudiar y no<br>sabes qué?</b></h1>
+                            <h4 class="text-white mt-5">Rellena el formulario<br>y te ayudamos</h4>
+                        </div>
                         </div>
                     </div>
+                    </div>
+                    
+                    <div class="col-xl-6 col-lg-7 col-12">
+                    <div class="container-fluid">
+                        <div class="row">
+                        <div class="col-xl-10 offset-xl-1 col-lg-11 col-12 offset-0">
+                            <form method="post" action="{{url('bootcamp-en-marketing-digital')}}">
+                            {{csrf_field()}}
+                            @if(request()->has('qr'))
+                                <input type="hidden" name="qr" value="{{ request('qr') }}">
+                            @endif
+                            <div class="fields">
+                                <div class="mb-3">
+                                <label class="text-white" for="name">Nombre:</label>
+                                <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="mb-3">
+                                <label class="text-white" for="surnames">Apellidos:</label>
+                                <input type="text" id="surnames" name="surnames" required>
+                                </div>
+                                <div class="mb-3">
+                                <label class="text-white" for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="mb-3">
+                                <label class="text-white" for="phone">Teléfono:</label>
+                                <input type="tel" pattern="^\+?[0-9\s\-]{7,15}$" id="phone" name="phone" required>
+                                </div>
+                                <div class="mb-3">
+                                <label class="text-white mb-2" for="current-position">Estudios primarios:</label>
+                                <select class="form-control" id="current-position" name="current_position" required>
+                                    <option value="" hidden>Seleccione una opción</option>
+                                    <option value="Directivos">Directivos</option>
+                                    <option value="Mandos intermedios">Mandos intermedios</option>
+                                    <option value="Responsables">Responsables</option>
+                                    <option value="Autónomos">Autónomos</option>
+                                </select>
+                                </div>
+                                <div class="mb-3">
+                                <label class="text-white mb-2" for="contact-way">Situación actual:</label>
+                                <select class="form-control" id="contact-way" name="contact_way" required>
+                                    <option value="" hidden>Seleccione una opción</option>
+                                    <option value="Whatsapp">Whatsapp</option>
+                                    <option value="Llamada telefónica">Llamada telefónica</option>
+                                    <option value="Email">Email</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <div class="custom-checkbox">
+                                <input type="checkbox" id="acceptConditions" required>
+                                <label class="ms-2 text-white" for="acceptConditions">Acepto aviso legal</label>
+                                </div>
+                                <div>
+                                <button type="submit" class="button-rounded blue border-0 bg-white px-4 py-2"><b>Enviar</b></button>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
                 </div>
             </div>
-            <video class="w-100 h-100 background-video" autoplay loop muted playsinline>
-                <source src="{{asset('videos/v4/Fondo 3.mp4')}}" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
+            </div>
+        </div>
+
         </section>
+
 
         <section class="bg-black py-5">
             <div class="container-fluid py-5">
