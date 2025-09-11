@@ -24,36 +24,50 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
     <body>
 
-        <section class="position-relative pb-5" style="background-image: url('{{asset('images/Imagenes-L1-1.png')}}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <section class="position-relative pb-5" 
+            style="background-image: url('{{asset('images/Imagenes-L1-1.png')}}'); 
+                background-size: cover; 
+                background-position: center bottom; 
+                background-repeat: no-repeat; 
+                min-height: 100vh; 
+                display: flex; 
+                flex-direction: column; 
+                justify-content: center; 
+                padding-top: -10vh;">
+            
             <div class="container-fluid mb-5">
                 <div class="row">
-                <div class="col-xl-10 offset-xl-1 mt-5">
-                    <h1 class="text-white">
-                    <b>
-                        Mejora tu carrera<br>
-                        profesional<br>
-                        sin dejar tu trabajo<br>
-                    </b>
-                    </h1>
-                    <h5 class="text-white mb-3">
-                    Cursos oficiales y gratuitos<br>
-                    diseñados para personas ocupadas
-                    </h5>
-                </div>
-                </div>
+                    <div class="col-xl-10 offset-xl-1">
+                        <h1 class="text-white" 
+                            style="font-size: 6.2rem; line-height: 1.1; font-weight: 900; margin-bottom: 3rem;">
+                            Mejora tu carrera<br>
+                            profesional<br>
+                            sin dejar tu trabajo
+                        </h1>
+                        <h5 class="text-white" 
+                            style="font-size: 3rem; font-weight: 500; margin-bottom: 4rem;">
+                            Cursos oficiales y gratuitos<br>
+                            diseñados para personas ocupadas
+                        </h5>
 
-                <div class="row">
-                <div class="col-xl-4 col-lg-5 col-12 mb-5">
-                    <div class="mt-lg-5 mt-4 p-lg-5 p-4">
-                    <h6 class="text-white mb-3">
-                        Formación subvencionada por:
-                    </h6>
-                    <img class="header-logo" src="{{asset('images/MEFPD.jpg')}}" alt="Logo AMEFPD">
+                        <div class="mt-5" style="padding-top: 6rem;">
+                            <h6 class="text-white mb-2" style="font-size: 1rem; font-weight: 400;">
+                                Formación subvencionada por:
+                            </h6>
+                            <img class="header-logo" src="{{asset('images/MEFPD.jpg')}}" alt="Logo AMEFPD">
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
         </section>
+
+
+
+
+
+
+
+
 
 
         <section class="mb-5 text-center">
