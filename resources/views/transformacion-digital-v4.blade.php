@@ -52,10 +52,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     </div>
                 </div>
 
-                <!-- 🔥 Ahora este bloque baja aún más -->
                 <div class="row">
                     <div class="col-xl-10 offset-xl-1">
-                        <div style="margin-top: auto; margin-bottom: -3rem;"> <!-- 👈 le damos espacio extra -->
+                        <div style="margin-top: auto; margin-bottom: -3rem;"> 
                             <h6 class="text-white mb-2" style="font-size: 1rem; font-weight: 400;">
                                 Formación subvencionada por:
                             </h6>
@@ -65,8 +64,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
             </div>
         </section>
-
-
 
         <section class="mb-5 text-center">
             <div class="container">
@@ -108,9 +105,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
             </div>
         </section>
-
-
-
 
         <section class="mb-5 bg-section text-center" 
             style="background-image: url('{{asset('images/Imagenes-L1-2.png')}}'); 
@@ -167,8 +161,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
             </div>
         </section>
-
-
 
         <section class="py-5">
             <div class="container-fluid py-5">
@@ -231,7 +223,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </section>
         
-
         <section id="form" class="position-relative" 
                 style="background-image: url('{{asset('images/Imagenes-L1-3.png')}}'); 
                         background-size: cover; 
@@ -245,10 +236,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div class="row">
                     <div class="col-xl-10 offset-xl-1 col-12 offset-0">
                         <div class="container-fluid">
-                            <!-- Igualamos la altura de las dos columnas -->
                             <div class="row my-5 py-5 align-items-stretch">
                                 
-                                <!-- Columna del texto -->
                                 <div class="col-xl-6 col-lg-5 col-12 mb-5 d-flex">
                                     <div class="container-fluid bg-transparent-black" style="height: 120%; border-radius: 25px;">
                                         <div class="row h-100">
@@ -260,12 +249,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                     </div>
                                 </div>
                                 
-                                <!-- Columna del formulario -->
                                 <div class="col-xl-6 col-lg-7 col-12 d-flex">
                                     <div class="container-fluid" style="height: 100%;">
                                         <div class="row h-100">
                                             <div class="col-xl-10 offset-xl-1 col-lg-11 col-12 offset-0 d-flex flex-column justify-content-center">
-                                                <!-- FORMULARIO -->
+
                                                 <form method="post" action="{{url('bootcamp-en-marketing-digital')}}">
                                                     {{csrf_field()}}
                                                     @if(request()->has('qr'))
@@ -330,7 +318,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                                         margin-left: 0;">
                                                                 <b>ENVIAR</b>
                                                             </button>
-
                                                         </div>
                                                     </div>
                                                 </form>
@@ -344,10 +331,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     </div>
                 </div>
             </div>
-
         </section>
-
-
 
         <section class="bg-black py-5">
             <div class="container-fluid py-5">
