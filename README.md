@@ -21,33 +21,6 @@ Su objetivo es facilitar a los usuarios la búsqueda de cursos, la consulta de f
 
 ---
 
-## 🖼️ Estructura de la Web
-
-La web está compuesta por las siguientes secciones:
-
-1. **Hero Section**  
-   - Imagen de portada  
-   - Título y subtítulo  
-   - Logo de la institución que subvenciona la formación  
-   - Llamado a la acción (CTA)
-
-2. **Sección de Ventajas**  
-   - Lista de beneficios de los cursos en tarjetas con diseño minimalista.  
-
-3. **Listado de Cursos**  
-   - Tarjetas individuales por curso.  
-   - Cada tarjeta incluye imagen, horario, modalidad, inicio y duración.  
-   - Contenido organizado en dos columnas:  
-     - **Izquierda:** Horario y modalidad  
-     - **Derecha:** Inicio y duración  
-
-4. **Formulario de Contacto**  
-   - Campos de nombre, apellidos, email, teléfono, estudios previos y situación actual.  
-   - Casilla de aceptación de condiciones legales.  
-   - Botón de envío con diseño en gradiente y texto centrado.  
-
----
-
 ## 🛠️ Tecnologías utilizadas
 
 - **HTML5** y **CSS3** → Maquetación y estilos.  
