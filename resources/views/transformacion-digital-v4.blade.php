@@ -29,8 +29,7 @@
 
 <body>
 
-    <section class="position-relative pb-5"
-        style="background-image: url('{{asset('images/Imagenes-L1-1.png')}}'); 
+    <section class="position-relative pb-5" style="background-image: url('{{asset('images/Imagenes-L1-1.png')}}'); 
             background-size: cover; 
             background-position: center bottom; 
             background-repeat: no-repeat; 
@@ -71,7 +70,6 @@
             </div>
         </div>
     </section>
-
 
 
     <section class="py-5">
@@ -198,8 +196,7 @@
     </section>
 
 
-    <section class="mb-5 text-center text-white d-flex align-items-start justify-content-center"
-        style="background-image: url('{{asset('images/Imagenes-L1-2.png')}}');
+    <section class="mb-5 text-center text-white d-flex align-items-start justify-content-center" style="background-image: url('{{asset('images/Imagenes-L1-2.png')}}');
             background-size: cover;
             background-position: center 80%;
             background-repeat: no-repeat;
@@ -207,26 +204,19 @@
             padding-top: 8vh;
             position: relative;">
 
-        <!-- Overlay opcional para mejorar contraste -->
         <div class="position-absolute top-0 start-0 w-100 h-100"></div>
-
         <div class="container position-relative">
             <div class="mx-auto" style="max-width: 900px;">
 
-                <!-- TITULO -->
-                <h1 class="fw-bold mb-5"
-                    style="font-size: clamp(2rem, 5vw, 4rem); line-height: 1.1;">
+                <h1 class="fw-bold mb-5" style="font-size: clamp(2rem, 5vw, 4rem); line-height: 1.1;">
                     Becas y ayudas para personas <br>en situación de desempleo
                 </h1>
 
-                <!-- SUBTITULO -->
-                <p class="mb-5"
-                style="font-size: clamp(1rem, 2vw, 1.6rem);">
+                <p class="mb-5" style="font-size: clamp(1rem, 2vw, 1.6rem);">
                     Queremos que solo te preocupes de aprender, por eso <br>
                     ponemos a tu disposición diferentes ayudas económicas
                 </p>
 
-                <!-- PRIMERA FILA -->
                 <div class="row g-3 mb-4">
                     <div class="col-12 col-sm-6">
                         <div class="bg-white text-dark rounded-3 p-3 h-100">
@@ -244,7 +234,6 @@
                     </div>
                 </div>
 
-                <!-- SEGUNDA FILA -->
                 <div class="row g-3">
                     <div class="col-12 col-sm-6">
                         <div class="bg-white text-dark rounded-3 p-3 h-100">
@@ -261,16 +250,13 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
 
-
     <section class="py-5">
         <div class="container-fluid py-5">
-
             <div class="mx-auto"
                 style="background-color: #e0ddddff; border-radius: 16px; padding: 3rem; max-width: 90%; color: #555;">
 
@@ -291,8 +277,6 @@
                                 font-size: clamp(1.2rem, 3vw, 2rem);">
                             ¿Cuál elegir?
                         </p>
-
-
                     </div>
 
                     <div class="col-12 col-md-7 mt-4 mt-md-0">
@@ -337,8 +321,7 @@
     </section>
 
 
-    <section id="form" class="position-relative d-flex align-items-center"
-        style="background-image: url('{{asset('images/Imagenes-L1-3.png')}}');
+    <section id="form" class="position-relative d-flex align-items-center" style="background-image: url('{{asset('images/Imagenes-L1-3.png')}}');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -349,7 +332,6 @@
                 <div class="col-12 col-xl-10 offset-xl-1">
                     <div class="row my-5 py-5 align-items-stretch">
 
-                        <!-- COLUMNA TEXTO -->
                         <div class="col-12 col-lg-5 mb-5 d-flex">
                             <div class="container-fluid bg-transparent-black rounded-4 p-4 d-flex align-items-center">
                                 <div class="row w-100">
@@ -367,7 +349,6 @@
                             </div>
                         </div>
 
-                        <!-- COLUMNA FORMULARIO -->
                         <div class="col-12 col-lg-7 d-flex">
                             <div class="container-fluid d-flex align-items-center">
                                 <div class="row w-100">
@@ -379,40 +360,51 @@
                                             @endif
 
                                             <div class="fields">
-                                                <!-- CAMPOS DEL FORMULARIO -->
+
                                                 <div class="mb-3">
                                                     <label class="text-white" for="name">Nombre:</label>
-                                                    <input type="text" id="name" name="name" class="form-control" required>
+                                                    <input type="text" id="name" name="name" class="form-control"
+                                                        required>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="text-white" for="surnames">Apellidos:</label>
-                                                    <input type="text" id="surnames" name="surnames" class="form-control" required>
+                                                    <input type="text" id="surnames" name="surnames"
+                                                        class="form-control" required>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="text-white" for="email">Email:</label>
-                                                    <input type="email" id="email" name="email" class="form-control" required>
+                                                    <input type="email" id="email" name="email" class="form-control"
+                                                        required>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="text-white" for="phone">Teléfono:</label>
                                                     <input type="tel" id="phone" name="phone"
-                                                        pattern="^\+?[0-9\s\-]{7,15}$"
-                                                        class="form-control" required>
+                                                        pattern="^\+?[0-9\s\-]{7,15}$" class="form-control" required>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="text-white mb-2" for="current-position">Estudios primarios:</label>
-                                                    <select id="current-position" name="current_position" class="form-control" required>
+                                                    <label class="text-white mb-2" for="current-position">Estudios
+                                                        primarios:</label>
+                                                    <select id="current-position" name="current_position"
+                                                        class="form-control" required>
                                                         <option value="" hidden>Seleccione una opción</option>
                                                         <option value="Primarios">Estudios Primarios</option>
-                                                        <option value="ESO">ESO / FP I / BUP / Acceso ciclo medio / Competencias clave 2</option>
-                                                        <option value="CF">CF Grado Medio / CF Grado Superior / FP II / Bachiller / COU / Acceso Cliclo Superior / Competencias clave 3</option>
+                                                        <option value="ESO">ESO / FP I / BUP / Acceso ciclo medio /
+                                                            Competencias clave 2</option>
+                                                        <option value="CF">CF Grado Medio / CF Grado Superior / FP II /
+                                                            Bachiller / COU / Acceso Cliclo Superior / Competencias
+                                                            clave 3</option>
                                                         <option value="Univ">Acceso Univ. Mayores de 25</option>
-                                                        <option value="Diplomatura">Diplomatura / Licenciatura / Grado</option>
-                                                        <option value="Titulacion">Titulación no homologada en España</option>
+                                                        <option value="Diplomatura">Diplomatura / Licenciatura / Grado
+                                                        </option>
+                                                        <option value="Titulacion">Titulación no homologada en España
+                                                        </option>
                                                     </select>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="text-white mb-2" for="contact-way">Situación actual:</label>
-                                                    <select id="contact-way" name="contact_way" class="form-control" required>
+                                                    <label class="text-white mb-2" for="contact-way">Situación
+                                                        actual:</label>
+                                                    <select id="contact-way" name="contact_way" class="form-control"
+                                                        required>
                                                         <option value="" hidden>Seleccione una opción</option>
                                                         <option value="Whatsapp">Desempleado/a</option>
                                                         <option value="Llamada telefónica">Ocupado</option>
@@ -420,17 +412,15 @@
                                                 </div>
                                             </div>
 
-                                            <!-- CHECKBOX + BOTÓN -->
-                                            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mt-4 gap-3">
+                                            <div
+                                                class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mt-4 gap-3">
                                                 <div class="custom-checkbox">
                                                     <input type="checkbox" id="acceptConditions" required>
                                                     <label class="ms-2 text-white" for="acceptConditions">
                                                         Acepto aviso legal
                                                     </label>
                                                 </div>
-                                                <button type="submit"
-                                                    class="border-0 px-4 py-2 fw-bold"
-                                                    style="background: linear-gradient(to right, #fd2a0e, #f5984c);
+                                                <button type="submit" class="border-0 px-4 py-2 fw-bold" style="background: linear-gradient(to right, #fd2a0e, #f5984c);
                                                         color: white;
                                                         border-radius: 12px;
                                                         font-size: clamp(1rem, 1.5vw, 1.3rem);
@@ -446,12 +436,11 @@
                             </div>
                         </div>
 
-                    </div> <!-- row -->
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
 
 
     <section class="bg-black py-5">
