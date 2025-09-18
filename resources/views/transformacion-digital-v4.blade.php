@@ -74,86 +74,189 @@
 
     <section class="py-5">
         <div class="container pb-3">
-            <div class="row g-4">
 
-                <div class="col-12 col-md-4">
-                    <div class="card shadow-sm h-100 rounded-3 p-3">
+            <div id="cursosCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                <div class="carousel-inner">
 
-                        <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
-                            <img src="{{asset('images/Imagenes-L1-1.png')}}" alt="Tarjeta 1"
-                                class="img-fluid w-100 h-100 object-fit-cover">
-                        </div>
-
-                        <div class="card-body text-start">
-                            <h5 class="card-title fw-bold mt-3">Gestión de Compras y Aprovisionamientos</h5>
-                            <hr>
-                            <div class="d-flex justify-content-between flex-wrap">
-                                <div class="mb-2">
-                                    <p><b>Horario: </b><br>Flexible</p>
-                                    <p><b>Modalidad: </b><br>Online</p>
+                    <!-- Primer Slide -->
+                    <div class="carousel-item active">
+                        <div class="row g-4">
+                            <!-- Card 1 -->
+                            <div class="col-12 col-md-4">
+                                <div class="card shadow-sm h-100 rounded-3 p-3">
+                                    <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+                                        <img src="{{asset('images/Imagenes-L1-1.png')}}" alt="Tarjeta 1"
+                                            class="img-fluid w-100 h-100 object-fit-cover">
+                                    </div>
+                                    <div class="card-body text-start">
+                                        <h5 class="card-title fw-bold mt-3">Gestión de Compras y Aprovisionamientos</h5>
+                                        <hr>
+                                        <div class="d-flex justify-content-between flex-wrap">
+                                            <div class="mb-2">
+                                                <p><b>Horario: </b><br>Flexible</p>
+                                                <p><b>Modalidad: </b><br>Online</p>
+                                            </div>
+                                            <div>
+                                                <p><b>Inicio: </b><br>SEPTIEMBRE</p>
+                                                <p><b>Duración: </b><br>40 horas</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p><b>Inicio: </b><br>SEPTIEMBRE</p>
-                                    <p><b>Duración: </b><br>40 horas</p>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="col-12 col-md-4">
+                                <div class="card shadow-sm h-100 rounded-3 p-3">
+                                    <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+                                        <img src="{{asset('images/Imagenes-L1-1.png')}}" alt="Tarjeta 2"
+                                            class="img-fluid w-100 h-100 object-fit-cover">
+                                    </div>
+                                    <div class="card-body text-start">
+                                        <h5 class="card-title fw-bold mt-3">Ofimática</h5>
+                                        <hr>
+                                        <div class="d-flex justify-content-between flex-wrap">
+                                            <div class="mb-2">
+                                                <p><b>Horario: </b><br>08:00 - 14:00</p>
+                                                <p><b>Modalidad: </b><br>Presencial</p>
+                                            </div>
+                                            <div>
+                                                <p><b>Inicio: </b><br>SEPTIEMBRE</p>
+                                                <p><b>Duración: </b><br>125 horas</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="col-12 col-md-4">
+                                <div class="card shadow-sm h-100 rounded-3 p-3">
+                                    <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+                                        <img src="{{asset('images/Imagenes-L1-1.png')}}" alt="Tarjeta 3"
+                                            class="img-fluid w-100 h-100 object-fit-cover">
+                                    </div>
+                                    <div class="card-body text-start">
+                                        <h5 class="card-title fw-bold mt-3">Operaciones Básicas de Restaurante y Bar</h5>
+                                        <hr>
+                                        <div class="d-flex justify-content-between flex-wrap">
+                                            <div class="mb-2">
+                                                <p><b>Horario: </b><br>15:00 a 21:00</p>
+                                                <p><b>Modalidad: </b><br>Presencial</p>
+                                            </div>
+                                            <div>
+                                                <p><b>Inicio: </b><br>SEPTIEMBRE</p>
+                                                <p><b>Duración: </b><br>315 horas</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-12 col-md-4">
-                    <div class="card shadow-sm h-100 rounded-3 p-3">
-
-                        <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
-                            <img src="{{asset('images/Imagenes-L1-1.png')}}" alt="Tarjeta 2"
-                                class="img-fluid w-100 h-100 object-fit-cover">
-                        </div>
-
-                        <div class="card-body text-start">
-                            <h5 class="card-title fw-bold mt-3">Ofimática</h5>
-                            <hr>
-                            <div class="d-flex justify-content-between flex-wrap">
-                                <div class="mb-2">
-                                    <p><b>Horario: </b><br>08:00 - 14:00</p>
-                                    <p><b>Modalidad: </b><br>Presencial</p>
+                    <!-- Segundo Slide (Duplicado con otros cursos para dar más contenido) -->
+                    <div class="carousel-item">
+                        <div class="row g-4">
+                            <!-- Card 4 -->
+                            <div class="col-12 col-md-4">
+                                <div class="card shadow-sm h-100 rounded-3 p-3">
+                                    <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+                                        <img src="{{asset('images/Imagenes-L1-1.png')}}" alt="Tarjeta 4"
+                                            class="img-fluid w-100 h-100 object-fit-cover">
+                                    </div>
+                                    <div class="card-body text-start">
+                                        <h5 class="card-title fw-bold mt-3">Marketing Digital</h5>
+                                        <hr>
+                                        <div class="d-flex justify-content-between flex-wrap">
+                                            <div class="mb-2">
+                                                <p><b>Horario: </b><br>Flexible</p>
+                                                <p><b>Modalidad: </b><br>Online</p>
+                                            </div>
+                                            <div>
+                                                <p><b>Inicio: </b><br>OCTUBRE</p>
+                                                <p><b>Duración: </b><br>60 horas</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p><b>Inicio: </b><br>SEPTIEMBRE</p>
-                                    <p><b>Duración: </b><br>125 horas</p>
+                            </div>
+
+                            <!-- Card 5 -->
+                            <div class="col-12 col-md-4">
+                                <div class="card shadow-sm h-100 rounded-3 p-3">
+                                    <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+                                        <img src="{{asset('images/Imagenes-L1-1.png')}}" alt="Tarjeta 5"
+                                            class="img-fluid w-100 h-100 object-fit-cover">
+                                    </div>
+                                    <div class="card-body text-start">
+                                        <h5 class="card-title fw-bold mt-3">Atención al Cliente</h5>
+                                        <hr>
+                                        <div class="d-flex justify-content-between flex-wrap">
+                                            <div class="mb-2">
+                                                <p><b>Horario: </b><br>09:00 - 13:00</p>
+                                                <p><b>Modalidad: </b><br>Presencial</p>
+                                            </div>
+                                            <div>
+                                                <p><b>Inicio: </b><br>NOVIEMBRE</p>
+                                                <p><b>Duración: </b><br>80 horas</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 6 -->
+                            <div class="col-12 col-md-4">
+                                <div class="card shadow-sm h-100 rounded-3 p-3">
+                                    <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+                                        <img src="{{asset('images/Imagenes-L1-1.png')}}" alt="Tarjeta 6"
+                                            class="img-fluid w-100 h-100 object-fit-cover">
+                                    </div>
+                                    <div class="card-body text-start">
+                                        <h5 class="card-title fw-bold mt-3">Inglés Básico</h5>
+                                        <hr>
+                                        <div class="d-flex justify-content-between flex-wrap">
+                                            <div class="mb-2">
+                                                <p><b>Horario: </b><br>16:00 - 19:00</p>
+                                                <p><b>Modalidad: </b><br>Presencial</p>
+                                            </div>
+                                            <div>
+                                                <p><b>Inicio: </b><br>DICIEMBRE</p>
+                                                <p><b>Duración: </b><br>100 horas</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
-                <div class="col-12 col-md-4">
-                    <div class="card shadow-sm h-100 rounded-3 p-3">
+                <!-- Controles -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#cursosCarousel" data-bs-slide="prev"
+                    style="position: absolute; top: 50%; transform: translateY(-50%); left: -150px; background: none; opacity: 1; width: auto; border: none; outline: none; box-shadow: none; padding: 0; margin: 0; z-index: 5; user-select: none;">
+                    <img src="{{ asset('images/l-arrow.png') }}" alt="Anterior"
+                        style="width: 40px; height: 40px; display: block; pointer-events: none;">
+                    <span class="visually-hidden">Anterior</span>
+                </button>
 
-                        <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
-                            <img src="{{asset('images/Imagenes-L1-1.png')}}" alt="Tarjeta 3"
-                                class="img-fluid w-100 h-100 object-fit-cover">
-                        </div>
+                <button class="carousel-control-next" type="button" data-bs-target="#cursosCarousel" data-bs-slide="next"
+                    style="position: absolute; top: 50%; transform: translateY(-50%); right: -150px; background: none; opacity: 1; width: auto; border: none; outline: none; box-shadow: none; padding: 0; margin: 0; z-index: 5; user-select: none;">
+                    <img src="{{ asset('images/r-arrow.png') }}" alt="Siguiente"
+                        style="width: 40px; height: 40px; display: block; pointer-events: none;">
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
 
-                        <div class="card-body text-start">
-                            <h5 class="card-title fw-bold mt-3">Operaciones Básicas de Restaurante y Bar</h5>
-                            <hr>
-                            <div class="d-flex justify-content-between flex-wrap">
-                                <div class="mb-2">
-                                    <p><b>Horario: </b><br>15:00 a 21:00</p>
-                                    <p><b>Modalidad: </b><br>Presencial</p>
-                                </div>
-                                <div>
-                                    <p><b>Inicio: </b><br>SEPTIEMBRE</p>
-                                    <p><b>Duración: </b><br>315 horas</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+
+
 
             </div>
         </div>
     </section>
+
 
 
     <section class="mb-5 text-center">
