@@ -49,3 +49,5 @@ Route::get('inteligencia-artificial', [IAController::class, 'index']);
 
 Route::post('inteligencia-artificial', [IAController::class, 'storeData']);
 
+//---------------------------------------------------  ---------------------------------------------------//
+
