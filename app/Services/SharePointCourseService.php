@@ -5,6 +5,7 @@ namespace App\Services;
 use Illuminate\Support\Facades\Http;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\CursosImport;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class SharePointCourseService
 {
@@ -120,24 +121,41 @@ class SharePointCourseService
         $token = $this->getAccessToken();
 
         $siteId = $this->getSiteId($token, $sitePath);
-
         $driveId = $this->getDriveId($token, $siteId);
+
         $this->downloadExcel($token, $driveId, $fileName);
 
-        $data = Excel::toArray(new CursosImport, storage_path('app/cursos.xlsx'));
-        $rows = $data[0] ?? [];
+        $spreadsheet = IOFactory::load(storage_path('app/cursos.xlsx'));
+        $sheet = $spreadsheet->getActiveSheet();
+        $rows = $sheet->toArray(null, true, true, false);
 
-        return array_map(function ($row) {
+        if (empty($rows)) {
+            return [];
+        }
+
+        // Quitamos la primera fila (cabeceras)
+        array_shift($rows);
+
+        // Filtramos por la columna de convocatoria (ej: columna 1 = "Código CRM")
+        $filtered = array_filter($rows, function ($row) {
+            return stripos($row[1] ?? '', 'L1') !== false;
+        });
+
+        // Mapeamos columnas -> claves que espera Blade
+        $mapped = array_map(function ($row) {
             return [
-                'titulo'       => $row[0] ?? '',
-                'horario'      => $row[3] ?? '',
-                'inicio'       => $row[5] ?? '',
-                'modalidad'    => $row[14] ?? '',
-                'duracion'     => $row[4] ?? '',
-                'convocatoria' => $row[1] ?? '',
-                'imagen'       => 'images/Imagenes-L1-1.png',
+                'titulo'   => $row[0] ?? '',  
+                'horario'  => $row[3] ?? '', 
+                'modalidad'=> $row[4] ?? '', 
+                'inicio'   => $row[5] ?? '',
+                'duracion' => $row[6] ?? '',  
+                'imagen'   => $row[7] ?? null 
             ];
-        }, array_slice($rows, 1));
+        }, $filtered);
+
+        return array_values($mapped);
     }
+
+
 
 }
