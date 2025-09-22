@@ -17,9 +17,9 @@ class DigitalTransformationV4Controller extends Controller
         $courses = array_map(function($row){
             return [
                 'titulo' => $row[0] ?? '',
-                'horario' => $row[1] ?? '',
-                'inicio' => $row[2] ?? '',
-                'modalidad' => $row[3] ?? '',
+                'horario' => $row[3] ?? '',
+                'inicio' => $row[5] ?? '',
+                'modalidad' => $row[14] ?? '',
                 'duracion' => $row[4] ?? '',
                 'convocatoria' => $row[1] ?? '',
                 'imagen' => 'images/Imagenes-L1-1.png',

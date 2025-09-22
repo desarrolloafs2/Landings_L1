@@ -146,9 +146,9 @@ class SharePointCourseService
             return [
                 'titulo'   => $row[0] ?? '',  
                 'horario'  => $row[3] ?? '', 
-                'modalidad'=> $row[4] ?? '', 
+                'modalidad'=> $row[14] ?? '', 
                 'inicio'   => $row[5] ?? '',
-                'duracion' => $row[6] ?? '',  
+                'duracion' => $row[4] ?? '',  
                 'imagen'   => $row[7] ?? null 
             ];
         }, $filtered);
