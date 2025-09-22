@@ -57,14 +57,12 @@
             </div>
 
             <div class="row">
-                <div class="col-xl-10 offset-xl-1 text-center text-lg-start">
-                    <div class="d-flex flex-column flex-lg-row align-items-center align-items-lg-start gap-3"
-                        style="margin-top: auto; margin-bottom: -1.5rem;">
-                        <h6 class="text-white mb-0" style="font-size: clamp(0.8rem, 1vw, 1rem); font-weight: 400;">
+                <div class="col-xl-10 offset-xl-1">
+                    <div style="margin-top: auto; margin-bottom: -3rem;">
+                        <h6 class="text-white mb-2" style="font-size: 1rem; font-weight: 400;">
                             Formación subvencionada por:
                         </h6>
-                        <img class="header-logo" src="{{asset('images/MEFPD.png')}}" alt="Logo AMEFPD"
-                            style="max-width: clamp(120px, 20vw, 250px); height: auto;">
+                        <img class="header-logo" src="{{asset('images/MEFPD.png')}}" alt="Logo AMEFPD">
                     </div>
                 </div>
             </div>
@@ -73,63 +71,68 @@
 
 
     <section class="py-5">
-    <div class="container pb-3">
+        <div class="container pb-3">
 
-        @if(empty($courses))
-            <p>No hay cursos disponibles.</p>
-        @else
-            <div id="cursosCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
-                <div class="carousel-inner" style="min-height: 420px;">
-                    @php
-                        $chunks = array_chunk($courses, 3);
-                    @endphp
+            @if(empty($courses))
+                <p>No hay cursos disponibles.</p>
+            @else
+                <div id="cursosCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                    <div class="carousel-inner" style="min-height: 420px;">
+                        @php
+                            $chunks = array_chunk($courses, 3);
+                        @endphp
 
-                    @foreach($chunks as $i => $chunk)
-                        <div class="carousel-item {{ $i === 0 ? 'active' : '' }}">
-                            <div class="row g-4">
-                                @foreach($chunk as $curso)
-                                    <div class="col-12 col-md-4">
-                                        <div class="card shadow-sm h-100 rounded-3 p-3">
-                                            <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
-                                                <img src="{{ isset($curso['imagen']) ? asset($curso['imagen']) : asset('images/placeholder.png') }}"
-                                                     alt="{{ $curso['titulo'] }}"
-                                                     class="img-fluid w-100 h-100 object-fit-cover">
-                                            </div>
+                        @foreach($chunks as $i => $chunk)
+                            <div class="carousel-item {{ $i === 0 ? 'active' : '' }}">
+                                <div class="row g-4">
+                                    @foreach($chunk as $curso)
+                                        <div class="col-12 col-md-4">
+                                            <div class="card shadow-sm h-100 rounded-3 p-3">
+                                                <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+                                                    <img src="{{ isset($curso['imagen']) ? asset($curso['imagen']) : asset('images/placeholder.png') }}"
+                                                        alt="{{ $curso['titulo'] }}"
+                                                        class="img-fluid w-100 h-100 object-fit-cover">
+                                                </div>
 
-                                            <div class="card-body text-start">
-                                                <h5 class="card-title fw-bold mt-3">{{ $curso['titulo'] }}</h5>
-                                                <hr>
-                                                <div class="d-flex justify-content-between flex-wrap">
-                                                    <div class="mb-2">
-                                                        <p><b>Horario:</b><br>{{ $curso['horario'] }}</p>
-                                                        <p><b>Modalidad:</b><br>{{ $curso['modalidad'] }}</p>
-                                                    </div>
-                                                    <div>
-                                                        <p><b>Inicio:</b><br>{{ $curso['inicio'] }}</p>
-                                                        <p><b>Duración:</b><br>{{ $curso['duracion'] }}</p>
+                                                <div class="card-body text-start">
+                                                    <h5 class="card-title fw-bold mt-3">{{ $curso['titulo'] }}</h5>
+                                                    <hr>
+                                                    <div class="d-flex justify-content-between flex-wrap">
+                                                        <div class="mb-2">
+                                                            <p><b>Horario:</b><br>{{ $curso['horario'] }}</p>
+                                                            <p><b>Modalidad:</b><br>{{ $curso['modalidad'] }}</p>
+                                                        </div>
+                                                        <div>
+                                                            <p><b>Inicio:</b><br>{{ $curso['inicio'] }}</p>
+                                                            <p><b>Duración:</b><br>{{ $curso['duracion'] }}</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                @endforeach
+                                    @endforeach
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#cursosCarousel" data-bs-slide="prev"
+                        style="position: absolute; top: 50%; transform: translateY(-50%); left: -150px; background: none; opacity: 1; width: auto; border: none; outline: none; box-shadow: none; padding: 0; margin: 0; z-index: 5; user-select: none;">
+                        <img src="{{ asset('images/l-arrow.png') }}" alt="Anterior"
+                            style="width: 40px; height: 40px; display: block; pointer-events: none;">
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#cursosCarousel" data-bs-slide="next"
+                        style="position: absolute; top: 50%; transform: translateY(-50%); right: -150px; background: none; opacity: 1; width: auto; border: none; outline: none; box-shadow: none; padding: 0; margin: 0; z-index: 5; user-select: none;">
+                        <img src="{{ asset('images/r-arrow.png') }}" alt="Siguiente"
+                            style="width: 40px; height: 40px; display: block; pointer-events: none;">
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
                 </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#cursosCarousel" data-bs-slide="prev">
-                    <img src="{{ asset('images/l-arrow.png') }}" alt="Anterior" style="width: 28px; height: 28px;">
-                </button>
-
-                <button class="carousel-control-next" type="button" data-bs-target="#cursosCarousel" data-bs-slide="next">
-                    <img src="{{ asset('images/r-arrow.png') }}" alt="Siguiente" style="width: 28px; height: 28px;">
-                </button>
-            </div>
-        @endif
-    </div>
-</section>
-
+            @endif
+        </div>
+    </section>
 
 
     <section class="mb-5 text-center">

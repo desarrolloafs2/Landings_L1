@@ -6,39 +6,46 @@ use App\Models\Access;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
-use Illuminate\Support\Facades\Http;
-use App\Services\CourseService;
+use Illuminate\Support\Facades\Log;
+use App\Services\SharePointCourseService;
 
 class DigitalTransformationV4Controller extends Controller
 {
     /**
-     * Muestra la landing de Transformación Digital con cursos.
+     * Muestra la landing de Transformación Digital con cursos desde SharePoint.
      */
     public function index(Request $request)
     {
-        // --- 1️⃣ Inicializamos el service que lee el Excel ---
-        $courseService = new CourseService();
-        $courses = $courseService->getCourses(); // obtiene un array de cursos
+        $sharePointUrl = 'https://afscentroformacion.sharepoint.com/:x:/r/comun/_layouts/15/Doc.aspx?sourcedoc={2B517B84-D77A-40EA-A3D1-B3672F02A7DF}&file=Cursos Web.xlsx&action=default&mobileredirect=true';
+
+        $service = new SharePointCourseService();
+        $courses = $service->getCourses();
+
+
+        try {
+            // --- 1️⃣ Inicializamos el service que lee el Excel online ---
+            $courseService = new SharePointCourseService();
+            $courses = $courseService->getCourses($sharePointUrl); // obtiene un array de cursos
+        } catch (\Exception $e) {
+            Log::error('Error al obtener cursos desde SharePoint: ' . $e->getMessage());
+        }
 
         // --- 2️⃣ Lógica de tracking QR ---
         if (isset($request['qr']) && !$request->hasCookie('tracked')) {
-            // Creamos o recuperamos el registro de accesos
             $record = Access::firstOrCreate(
                 ['origen' => 'QR-V4'],
                 ['accesos' => 0, 'registros' => 0]
             );
             $record->increment('accesos');
 
-            // Creamos cookie de tracking
             $cookie = Cookie::forever('tracked', 'access');
 
-            // --- 3️⃣ Devolvemos la vista con cookie y cursos ---
             return response()
                 ->view('transformacion-digital-v4', compact('courses'))
                 ->cookie($cookie);
         }
 
-        // --- 4️⃣ Vista normal si no es QR ---
+        // --- 3️⃣ Vista normal si no es QR ---
         return view('transformacion-digital-v4', compact('courses'));
     }
 
@@ -82,7 +89,7 @@ class DigitalTransformationV4Controller extends Controller
         ];
 
         // Enviamos los datos al API externo
-        Http::post('https://www.grupoafs.com/FormToDynamics/public/api', $data);
+        \Illuminate\Support\Facades\Http::post('https://www.grupoafs.com/FormToDynamics/public/api', $data);
 
         // --- Si venimos de QR, actualizamos cookie y registro ---
         if (isset($request['qr']) && $request->cookie('tracked') === 'access') {
@@ -100,4 +107,6 @@ class DigitalTransformationV4Controller extends Controller
         // Redirigimos normalmente si no hay QR
         return redirect('https://afsformacion.com/gracias-por-preinscribirte/');
     }
+
+
 }

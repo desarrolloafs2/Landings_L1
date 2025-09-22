@@ -49,5 +49,7 @@ Route::get('inteligencia-artificial', [IAController::class, 'index']);
 
 Route::post('inteligencia-artificial', [IAController::class, 'storeData']);
 
-//---------------------------------------------------  ---------------------------------------------------//
+//--------------------------------------------------- L1 ---------------------------------------------------//
 
+Route::get('cursos-gratis-ocupados-ministerio', [DigitalTransformationV4Controller::class, 'index']);
+Route::post('cursos-gratis-ocupados-ministerio', [DigitalTransformationV4Controller::class, 'storeData']);
