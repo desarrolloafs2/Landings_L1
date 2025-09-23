@@ -143,15 +143,25 @@ class SharePointCourseService
 
         // Mapeamos columnas -> claves que espera Blade
         $mapped = array_map(function ($row) {
+            $imagen = $row[19] ?? '';
+
+            if (!empty($imagen)) {
+                if (!str_starts_with($imagen, 'http')) {
+                    // Construye la URL absoluta en SharePoint
+                    $imagen = 'https://afscentroformacion.sharepoint.com/comun/Documentos%20compartidos/02%20CURSOS%20WEB/IMAGENES/' . rawurlencode($imagen);
+                }
+            }
+
             return [
-                'titulo'   => $row[0] ?? '',  
-                'horario'  => $row[3] ?? '', 
-                'modalidad'=> $row[14] ?? '', 
+                'titulo'   => $row[0] ?? '',
+                'horario'  => $row[3] ?? '',
+                'modalidad'=> $row[4] ?? '',
                 'inicio'   => $row[5] ?? '',
-                'duracion' => $row[4] ?? '',  
-                'imagen'   => $row[7] ?? null 
+                'duracion' => $row[6] ?? '',
+                'imagen'   => $imagen,
             ];
         }, $filtered);
+
 
         return array_values($mapped);
     }

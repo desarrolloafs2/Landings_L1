@@ -22,7 +22,7 @@ class DigitalTransformationV4Controller extends Controller
                 'modalidad' => $row[14] ?? '',
                 'duracion' => $row[4] ?? '',
                 'convocatoria' => $row[1] ?? '',
-                'imagen' => 'images/Imagenes-L1-1.png',
+                'imagen' => $row[19] ?? '',
             ];
         }, $courses);
 

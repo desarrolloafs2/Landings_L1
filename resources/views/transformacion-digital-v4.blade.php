@@ -89,9 +89,7 @@
                                         <div class="col-12 col-md-4">
                                             <div class="card shadow-sm h-100 rounded-3 p-3">
                                                 <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
-                                                    <img src="{{ isset($curso['imagen']) ? asset($curso['imagen']) : asset('images/placeholder.png') }}"
-                                                        alt="{{ $curso['titulo'] }}"
-                                                        class="img-fluid w-100 h-100 object-fit-cover">
+                                                    <img src="{{ $curso['imagen'] ?: asset('images/placeholder.png') }}" alt="{{ $curso['titulo'] }}" class="img-fluid w-100 h-100 object-fit-cover">
                                                 </div>
 
                                                 <div class="card-body text-start">
