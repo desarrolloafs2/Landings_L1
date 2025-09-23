@@ -89,7 +89,8 @@
                                         <div class="col-12 col-md-4">
                                             <div class="card shadow-sm h-100 rounded-3 p-3">
                                                 <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
-                                                    <img src="{{ $curso['imagen'] ?: asset('images/placeholder.png') }}" alt="{{ $curso['titulo'] }}" class="img-fluid w-100 h-100 object-fit-cover">
+                                                    <img src="{{ $curso['imagen'] ?: asset('images/placeholder.png') }}"
+                                                        alt="{{ $curso['titulo'] }}" class="img-fluid w-100 h-100 object-fit-cover">
                                                 </div>
 
                                                 <div class="card-body text-start">
@@ -114,14 +115,16 @@
                         @endforeach
                     </div>
 
-                    <button class="carousel-control-prev" type="button" data-bs-target="#cursosCarousel" data-bs-slide="prev"
+                    <button class="carousel-control-prev" type="button" data-bs-target="#cursosCarousel"
+                        data-bs-slide="prev"
                         style="position: absolute; top: 50%; transform: translateY(-50%); left: -150px; background: none; opacity: 1; width: auto; border: none; outline: none; box-shadow: none; padding: 0; margin: 0; z-index: 5; user-select: none;">
                         <img src="{{ asset('images/l-arrow.png') }}" alt="Anterior"
                             style="width: 40px; height: 40px; display: block; pointer-events: none;">
                         <span class="visually-hidden">Anterior</span>
                     </button>
 
-                    <button class="carousel-control-next" type="button" data-bs-target="#cursosCarousel" data-bs-slide="next"
+                    <button class="carousel-control-next" type="button" data-bs-target="#cursosCarousel"
+                        data-bs-slide="next"
                         style="position: absolute; top: 50%; transform: translateY(-50%); right: -150px; background: none; opacity: 1; width: auto; border: none; outline: none; box-shadow: none; padding: 0; margin: 0; z-index: 5; user-select: none;">
                         <img src="{{ asset('images/r-arrow.png') }}" alt="Siguiente"
                             style="width: 40px; height: 40px; display: block; pointer-events: none;">

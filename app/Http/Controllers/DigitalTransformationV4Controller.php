@@ -11,9 +11,7 @@ use App\Services\SharePointCourseService;
 
 class DigitalTransformationV4Controller extends Controller
 {
-    /**
-     * Muestra la landing de Transformación Digital con cursos desde SharePoint.
-     */
+
     public function index(Request $request)
     {
         $sharePointUrl = 'https://afscentroformacion.sharepoint.com/:x:/r/comun/_layouts/15/Doc.aspx?sourcedoc={2B517B84-D77A-40EA-A3D1-B3672F02A7DF}&file=Cursos Web.xlsx&action=default&mobileredirect=true';
@@ -23,14 +21,12 @@ class DigitalTransformationV4Controller extends Controller
 
 
         try {
-            // --- 1️⃣ Inicializamos el service que lee el Excel online ---
             $courseService = new SharePointCourseService();
-            $courses = $courseService->getCourses($sharePointUrl); // obtiene un array de cursos
+            $courses = $courseService->getCourses($sharePointUrl);
         } catch (\Exception $e) {
             Log::error('Error al obtener cursos desde SharePoint: ' . $e->getMessage());
         }
 
-        // --- 2️⃣ Lógica de tracking QR ---
         if (isset($request['qr']) && !$request->hasCookie('tracked')) {
             $record = Access::firstOrCreate(
                 ['origen' => 'QR-V4'],
@@ -45,16 +41,11 @@ class DigitalTransformationV4Controller extends Controller
                 ->cookie($cookie);
         }
 
-        // --- 3️⃣ Vista normal si no es QR ---
         return view('transformacion-digital-v4', compact('courses'));
     }
 
-    /**
-     * Procesa el formulario de preinscripción.
-     */
     public function storeData(Request $request): RedirectResponse
     {
-        // Sanitizamos campos
         $name = htmlspecialchars($request['name']);
         $surnames = htmlspecialchars($request['surnames']);
         $email = htmlspecialchars($request['email']);
@@ -62,7 +53,6 @@ class DigitalTransformationV4Controller extends Controller
         $current_position = htmlspecialchars($request['current_position']);
         $contact_way = htmlspecialchars($request['contact_way']);
 
-        // Construimos los campos para el API externo
         $fields = [
             null,
             $email,
@@ -88,10 +78,8 @@ class DigitalTransformationV4Controller extends Controller
             'observations' => 'landingsEOI'
         ];
 
-        // Enviamos los datos al API externo
         \Illuminate\Support\Facades\Http::post('https://www.grupoafs.com/FormToDynamics/public/api', $data);
 
-        // --- Si venimos de QR, actualizamos cookie y registro ---
         if (isset($request['qr']) && $request->cookie('tracked') === 'access') {
             $alreadyRegistered = Cookie::forever('tracked', 'registered');
 
@@ -104,7 +92,6 @@ class DigitalTransformationV4Controller extends Controller
                 ->cookie($alreadyRegistered);
         }
 
-        // Redirigimos normalmente si no hay QR
         return redirect('https://afsformacion.com/gracias-por-preinscribirte/');
     }
 

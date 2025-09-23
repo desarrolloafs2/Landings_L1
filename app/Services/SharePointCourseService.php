@@ -9,9 +9,7 @@ use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class SharePointCourseService
 {
-    /**
-     * Obtiene token de Microsoft Graph
-     */
+
     protected function getAccessToken()
     {
         $tenantId = env('AZURE_TENANT_ID');
@@ -19,10 +17,10 @@ class SharePointCourseService
         $clientSecret = env('AZURE_CLIENT_SECRET');
 
         $response = Http::asForm()->post("https://login.microsoftonline.com/$tenantId/oauth2/v2.0/token", [
-            'grant_type'    => 'client_credentials',
-            'client_id'     => $clientId,
+            'grant_type' => 'client_credentials',
+            'client_id' => $clientId,
             'client_secret' => $clientSecret,
-            'scope'         => 'https://graph.microsoft.com/.default',
+            'scope' => 'https://graph.microsoft.com/.default',
         ]);
 
         if (!$response->ok()) {
@@ -32,9 +30,7 @@ class SharePointCourseService
         return $response->json()['access_token'];
     }
 
-    /**
-     * Obtiene siteId a partir del sitePath (ej: /comun)
-     */
+
     protected function getSiteId($token, $sitePath)
     {
         $response = Http::withToken($token)
@@ -47,9 +43,7 @@ class SharePointCourseService
         return $response->json()['id'];
     }
 
-    /**
-     * Obtiene el driveId de la librería principal
-     */
+
     protected function getDriveId($token, $siteId)
     {
         $response = Http::withToken($token)
@@ -59,7 +53,7 @@ class SharePointCourseService
             throw new \Exception('Drives no encontrados: ' . $response->body());
         }
 
-      
+
         $drive = collect($response->json()['value'])->firstWhere('name', 'Documents');
         if (!$drive) {
             $drive = collect($response->json()['value'])->first(); // fallback
@@ -68,12 +62,9 @@ class SharePointCourseService
         return $drive['id'];
     }
 
-    /**
-     * Descarga el Excel desde Graph y lo guarda localmente
-     */
     protected function downloadExcel($token, $driveId, $fileName)
     {
-   
+
         $childrenResponse = Http::withToken($token)
             ->get("https://graph.microsoft.com/v1.0/drives/$driveId/root/children");
 
@@ -110,12 +101,6 @@ class SharePointCourseService
         file_put_contents(storage_path('app/cursos.xlsx'), $downloadResponse->body());
     }
 
-
-
-
-    /**
-     * Punto de entrada principal: obtiene los cursos del Excel en SharePoint
-     */
     public function getCourses(string $sitePath = '/comun', string $fileName = 'Cursos Web.xlsx')
     {
         $token = $this->getAccessToken();
@@ -133,32 +118,28 @@ class SharePointCourseService
             return [];
         }
 
-        // Quitamos la primera fila (cabeceras)
         array_shift($rows);
 
-        // Filtramos por la columna de convocatoria (ej: columna 1 = "Código CRM")
         $filtered = array_filter($rows, function ($row) {
             return stripos($row[1] ?? '', 'L1') !== false;
         });
 
-        // Mapeamos columnas -> claves que espera Blade
         $mapped = array_map(function ($row) {
             $imagen = $row[19] ?? '';
 
             if (!empty($imagen)) {
                 if (!str_starts_with($imagen, 'http')) {
-                    // Construye la URL absoluta en SharePoint
                     $imagen = 'https://afscentroformacion.sharepoint.com/comun/Documentos%20compartidos/02%20CURSOS%20WEB/IMAGENES/' . rawurlencode($imagen);
                 }
             }
 
             return [
-                'titulo'   => $row[0] ?? '',
-                'horario'  => $row[3] ?? '',
-                'modalidad'=> $row[4] ?? '',
-                'inicio'   => $row[5] ?? '',
-                'duracion' => $row[6] ?? '',
-                'imagen'   => $imagen,
+                'titulo' => $row[0] ?? '',
+                'horario' => $row[3] ?? '',
+                'modalidad' => $row[14] ?? '',
+                'inicio' => $row[5] ?? '',
+                'duracion' => $row[4] ?? '',
+                'imagen' => $imagen,
             ];
         }, $filtered);
 
