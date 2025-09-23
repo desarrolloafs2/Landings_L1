@@ -7,7 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Log;
-use App\Services\SharePointCourseService;
+use App\Services\SharePointCourseServiceL1;
 
 class ConvocatoriaL1 extends Controller
 {
@@ -16,12 +16,12 @@ class ConvocatoriaL1 extends Controller
     {
         $sharePointUrl = 'https://afscentroformacion.sharepoint.com/:x:/r/comun/_layouts/15/Doc.aspx?sourcedoc={2B517B84-D77A-40EA-A3D1-B3672F02A7DF}&file=Cursos Web.xlsx&action=default&mobileredirect=true';
 
-        $service = new SharePointCourseService();
+        $service = new SharePointCourseServiceL1();
         $courses = $service->getCourses();
 
 
         try {
-            $courseService = new SharePointCourseService();
+            $courseService = new SharePointCourseServiceL1();
             $courses = $courseService->getCourses($sharePointUrl);
         } catch (\Exception $e) {
             Log::error('Error al obtener cursos desde SharePoint: ' . $e->getMessage());

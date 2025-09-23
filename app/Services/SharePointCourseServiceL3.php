@@ -7,7 +7,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\CursosImport;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
-class SharePointCourseService
+class SharePointCourseServiceL3
 {
 
     protected function getAccessToken()
@@ -121,7 +121,7 @@ class SharePointCourseService
         array_shift($rows);
 
         $filtered = array_filter($rows, function ($row) {
-            return stripos($row[1] ?? '', 'L1') !== false;
+            return stripos($row[1] ?? '', 'L3') !== false;
         });
 
         $mapped = array_map(function ($row) {

@@ -7,21 +7,21 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Log;
-use App\Services\SharePointCourseServiceL1;
+use App\Services\SharePointCourseServiceL3;
 
-class DigitalTransformationV4Controller extends Controller
+class ConvocatoriaL3 extends Controller
 {
 
     public function index(Request $request)
     {
         $sharePointUrl = 'https://afscentroformacion.sharepoint.com/:x:/r/comun/_layouts/15/Doc.aspx?sourcedoc={2B517B84-D77A-40EA-A3D1-B3672F02A7DF}&file=Cursos Web.xlsx&action=default&mobileredirect=true';
 
-        $service = new SharePointCourseServiceL1();
+        $service = new SharePointCourseServiceL3();
         $courses = $service->getCourses();
 
 
         try {
-            $courseService = new SharePointCourseServiceL1();
+            $courseService = new SharePointCourseServiceL3();
             $courses = $courseService->getCourses($sharePointUrl);
         } catch (\Exception $e) {
             Log::error('Error al obtener cursos desde SharePoint: ' . $e->getMessage());
@@ -37,11 +37,11 @@ class DigitalTransformationV4Controller extends Controller
             $cookie = Cookie::forever('tracked', 'access');
 
             return response()
-                ->view('transformacion-digital-v4', compact('courses'))
+                ->view('convocatoria-L3', compact('courses'))
                 ->cookie($cookie);
         }
 
-        return view('transformacion-digital-v4', compact('courses'));
+        return view('convocatoria-L3', compact('courses'));
     }
 
     public function storeData(Request $request): RedirectResponse
