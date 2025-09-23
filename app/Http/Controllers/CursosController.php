@@ -1,6 +1,6 @@
 <?php
 
-use App\Imports\CursosImport;
+/*use App\Imports\CursosImport;
 use Maatwebsite\Excel\Facades\Excel;
 
 class DigitalTransformationV4Controller extends Controller
@@ -26,3 +26,4 @@ class DigitalTransformationV4Controller extends Controller
         return view('transformacion-digital-v4', compact('courses'));
     }
 }
+    **/

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ConvocatoriaL1;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DigitalTransformationController;
 use App\Http\Controllers\DigitalTransformationV2Controller;
@@ -51,5 +52,5 @@ Route::post('inteligencia-artificial', [IAController::class, 'storeData']);
 
 //--------------------------------------------------- L1 ---------------------------------------------------//
 
-Route::get('cursos-gratis-ocupados-ministerio', [DigitalTransformationV4Controller::class, 'index']);
-Route::post('cursos-gratis-ocupados-ministerio', [DigitalTransformationV4Controller::class, 'storeData']);
+Route::get('cursos-gratis-ocupados-ministerio', [ConvocatoriaL1::class, 'index']);
+Route::post('cursos-gratis-ocupados-ministerio', [ConvocatoriaL1::class, 'storeData']);
